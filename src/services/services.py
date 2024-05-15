@@ -11,7 +11,7 @@ load_dotenv()
 TASKS_PROMPTS = load_json(os.path.join("data", "tasks_prompt.json"))
 
 if "ui-text-lang" not in st.session_state:
-    st.session_state["ui-text-lang"] = os.getenv('DEFAULT_LANGUAGE')
+    st.session_state["ui-text-lang"] = "yoruba"
 
 
 def custom_google_trans(text_to_translate: str, language_source: str, language_target: str):

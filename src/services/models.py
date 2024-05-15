@@ -1,8 +1,9 @@
+import os
 from openai import OpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
-client = OpenAI()
+client = OpenAI(api_key="sk-proj-ebQPBisewWcHcOIEEV5hT3BlbkFJgCiZcvLt5WaKEWn56dGV")
 
 
 class OpenAiModel:
