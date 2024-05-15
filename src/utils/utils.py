@@ -1,8 +1,24 @@
+import base64
 import json
 import os
 import pandas as pd
 import streamlit as st
 from datetime import datetime
+
+
+# Function to encode image to base64
+@st.cache_resource
+def get_image_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+
+@st.cache_resource
+def get_article_image_base64(filename: str):
+    # Path to the image
+    image_path = os.path.join('assets', 'images', 'articles', filename)
+
+    return get_image_base64(image_path)
 
 
 def update_ui_text():
