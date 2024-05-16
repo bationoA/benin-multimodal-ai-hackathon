@@ -4,12 +4,28 @@
 AFE AI is a generative AI system tailored for the promotion of local languages and tourism in Benin. Developed with a user-centric approach, the app offers an intuitive interface for local communities or tourists to prompt and gather information related to culture and tourism in Benin. The APP is built to support local languages such as Yoruba, Fon, and Dendi, which are the most common languages in Benin. It also supports international languages such as English and French. At this stage the system support only Yoruba, English and French; but we are working on fine-tuning LLM models to extends the languages to Fon and Dendi. The technologies under this system are ChatGPT for text generation, Dalle for image generation, and google translate for text translation. 
 
 ## Getting Started
-There are two ways of setting using the app. 
-You can clone the GitHub repository then install the dependencies using the command:
+There ways to use the app. First, follow these steps to starting using the app:
+
+1. Clone the Git repository to your local machine:
+```commandline
+git clone git@github.com:bationoA/benin-multimodal-ai-hackathon.git
+```
+
+2. Navigate to the project directory:
+```commandline
+cd Team-Unfold-APHRC-DSE-inspire-hackathon-2024
+```
+3. Install the required packages from `requirements.txt`:
 ```commandline
 pip install -r requirements.txt
 ```
-Then to be able to use the app OpenAI valid API KEY must be provided in the code. 	
+4. Launch the Streamlit app:
+```commandline
+streamlit run Home.py
+```
+
+NOTE: A valid OpenAI API KEY is required to be able to use the app. 	
+
 The second method is to use the link to the app which is hosted in Streamlit. You must also input a valid OpenAI API KEY to be able to run the app:
 [Link to the hosted version](https://benin-multimodal-ai-hackathon-cudzxczsbxxv67jnnkjely.streamlit.app/).
 
