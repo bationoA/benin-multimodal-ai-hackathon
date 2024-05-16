@@ -3,12 +3,12 @@ import pandas as pd
 import streamlit as st
 from openai import OpenAI
 
-from src import default_pages_config, update_ui_text, format_an_upcoming_event_display, Pipeline
+from src import default_pages_config, update_ui_text, format_an_upcoming_event_display, Pipeline, \
+    format_user_image_display, sample_image_display
 from src.page_format import format_article_display
 
 st.session_state["ui-text-lang"] = "english"
 update_ui_text()  # Load UI text translations
-
 
 # --------------------- LOGO-TEXT AND TITLE
 app_title = "Afe AI"
@@ -17,7 +17,7 @@ page_description = "By Amos Bationo and Abdoul Aziz Maiga - Team <b><i>Unfold</i
 
 default_pages_config(_title=page_title)
 
-row_horizontal_menu = st.columns([2, 4, 3, 2])
+row_horizontal_menu = st.columns([2, 5, 2, 2])
 language_names = ["English", "French", "Yoruba", "Fon"]
 selected_language_name = row_horizontal_menu[3].selectbox(
     label="language",
@@ -30,17 +30,9 @@ if selected_language_name:
     update_ui_text()
 
 row_horizontal_menu[0].image(image=os.path.join("assets", "images", "benin_mask.png"), width=200)
-# row_horizontal_menu[1].markdown(f"<a href='generate_image' class='main-horizontal-menu'>"
-#                                 f"<h3 style='text-align:center;'>"
-#                                 f"{st.session_state['ui-text']['tab_generate_image'].title()}</h3></a>"
-#                                 , unsafe_allow_html=True)
-row_horizontal_menu[2].markdown(f"<a href='#' class='main-horizontal-menu'>"
-                                f"<h3 style='text-align:center;'>"
-                                f"{st.session_state['ui-text']['trip_to_benin'].title()}</h3></a>"
-                                , unsafe_allow_html=True)
 
 st.markdown(f"<h3 style='text-align:center; color: white; font-size: 2rem'>"
-            f"{st.session_state['ui-text']['banner_text'].capitalize()}</h3>",
+            f"{st.session_state['ui-text']['page_user_generate_images'].capitalize()}</h3>",
             unsafe_allow_html=True)
 st.markdown(f"""
 <h6 style='text-align: center; color: gray'>
@@ -49,9 +41,13 @@ st.markdown(f"""
 # --------------------- END LOGO-TEXT AND TITLE
 pipeline = Pipeline()
 if "openai-api-key" in st.session_state:
-    pipeline = Pipeline(openai_client=OpenAI(api_key=st.session_state["openai-api-key"]))
+    pipeline = Pipeline(
+        service_type="generate-image",
+        openai_client=OpenAI(api_key=st.session_state["openai-api-key"])
+    )
 
 # BEGIN: Side bar
+
 with st.sidebar:
     value = ""
     if "openai-api-key" in st.session_state:
@@ -95,21 +91,20 @@ for ind, event in coming_events.iterrows():
 row_coming_events = st.columns(len(coming_events_to_display))
 for i, coming_event in enumerate(coming_events_to_display):
     first_paragraph = coming_event[0]
-    html_ = format_an_upcoming_event_display(event=first_paragraph, display_num_char=200)
+    html_ = sample_image_display(event=first_paragraph)
     row_coming_events[i].markdown(html_, unsafe_allow_html=True)
 
-st.markdown(f"<br><br><br><br>", unsafe_allow_html=True)
-# ------------ Queries
+st.markdown(f"<br>", unsafe_allow_html=True)
 st.markdown(f"""
-<h3 style='text-align: center; color: white'>{st.session_state['ui-text']['how_can_i_help_with_tourism_benin']}?</h3>""", unsafe_allow_html=True)
+<h6 style='text-align: center; color: gray'>{st.session_state['ui-text']['page_user_generate_sample_images']}</h6>""", unsafe_allow_html=True)
 
-# -- Suggested queries
-# row_query_suggestions = st.columns(5)
-# row_query_suggestions[1].button(label=st.session_state['ui-text']['where_to_visit_in_benin'])
-# row_query_suggestions[2].button(label=st.session_state['ui-text']['can_you_tell_talk_about_benin'])
-# row_query_suggestions[3].button(label=st.session_state['ui-text']['what_are_tourist_places_in_benin'])
+st.markdown(f"<br><br><br><br>", unsafe_allow_html=True)
 
-# -- Queries form
+st.markdown(f"""
+<h3 style='text-align: center; color: white'>{st.session_state['ui-text']['page_user_generate_creative_images']}</h3>""", unsafe_allow_html=True)
+
+
+# ------------ Queries
 row_query_form = st.columns([1, 5, 1])
 
 # Initialize chat history
@@ -122,7 +117,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"], unsafe_allow_html=True)
 
 # React to user input
-if prompt := st.chat_input(f"{st.session_state['ui-text']['how_can_i_help_with_tourism_benin']}?"):
+if prompt := st.chat_input(st.session_state['ui-text']["how_can_i_help_with_tourism_benin"]):
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
@@ -134,8 +129,7 @@ if prompt := st.chat_input(f"{st.session_state['ui-text']['how_can_i_help_with_t
         pipeline.run()
 
     # response = f"Echo: {prompt}"
-    response = format_article_display(pipeline.paragraphs) if len(pipeline.paragraphs) \
-else f"""<p style="background-colr: white; color: red">Connection Error: Check your internet, OpenAI API key or try later.</p>"""
+    response = format_user_image_display(pipeline.user_image_url)
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):

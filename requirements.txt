@@ -6,3 +6,5 @@ jupyterlab==4.2.0
 python-dotenv==1.0.1
 streamlit~=1.34.0
 deep_translator==1.9.1
+requests~=2.31.0
+pillow~=10.3.0

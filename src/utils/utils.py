@@ -1,16 +1,26 @@
 import base64
 import json
 import os
+from io import BytesIO
+import requests
 import pandas as pd
 import streamlit as st
 from datetime import datetime
+from PIL import Image
 
 
 # Function to encode image to base64
 @st.cache_resource
-def get_image_base64(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
+def get_image_base64(image_file, is_file_path: bool = True):
+    if is_file_path:
+        with open(image_file, "rb") as img_file:
+            return base64.b64encode(img_file.read()).decode()
+    else:
+        """Convert PIL image to base64 encoded string."""
+        buffered = BytesIO()
+        image_file.save(buffered, format="JPEG")
+        img_str = base64.b64encode(buffered.getvalue()).decode()
+        return img_str
 
 
 @st.cache_resource
@@ -286,3 +296,22 @@ def add_s_plural(num: int) -> str:
     :return:
     """
     return "s" if num > 1 else ""
+
+
+def generate_image(image_url: str):
+    # Get image URL from response
+
+    image_response = requests.get(image_url)
+    image = Image.open(BytesIO(image_response.content))
+
+    # Resize and compress the image
+    max_width, max_height = 256, 256
+    image.thumbnail((max_width, max_height))
+    img_byte_arr = BytesIO()
+    image.save(img_byte_arr, format='JPEG', quality=85)
+    img_byte_arr.seek(0)
+
+    # Convert image to base64
+    img_base64 = get_image_base64(image)
+
+    return send_file(img_byte_arr, mimetype='image/jpeg')

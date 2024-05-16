@@ -16681,6 +16681,17 @@ def default_pages_config(_title=None, layout="wide"):
     st.markdown(add_html_divider, unsafe_allow_html=True)
 
 
+def format_user_image_display(image_url: str):
+    return f"""
+        <a href="{image_url}">
+            <picture class="col-md-5">
+              <source srcset="{image_url}">
+              <img src="{image_url}" class="img-fluid img-thumbnail col-md-6" alt="...">
+            </picture>
+        </a>
+    """
+
+
 def format_an_upcoming_event_display(event: dict, display_num_char: int | None = None):
     event_description = event['text'] if display_num_char is None else event['text'][0:display_num_char]
     if len(event_description) < len(event['text']):
@@ -16691,6 +16702,19 @@ def format_an_upcoming_event_display(event: dict, display_num_char: int | None =
               <img src="data:image/png;base64,{get_article_image_base64(event['image_name'])}" class="card-img" alt="...">
               <div class="card-img-overlay" style="background-color: rgba(0,0,0,0.5);">
                 <p class="card-text">{event_description}</p>
+              </div>
+            </div>
+        </a>
+    """
+
+
+def sample_image_display(event: dict):
+    return f"""
+        <a href="#">
+            <div class="card text-bg-dark" style="width: 25em;">
+              <img src="data:image/png;base64,{get_article_image_base64(event['image_name'])}" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <p class="card-text"></p>
               </div>
             </div>
         </a>

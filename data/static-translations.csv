@@ -1,9 +1,14 @@
 message,french,english,yoruba,fon
-tab_generate_image,Générer image,Generate Image,Ṣe ina aworan,Fòto tò
-where_to_visit_in_benin,Quel lieu  visiter au bénin ?,Where to visit in Benin?,Nibo ni lati ṣabẹwo si Benin?,
-can_you_tell_talk_about_benin,Peux tu me parler du Bénin ?,Can you tell me about Benin?,Ṣe o le sọ fun mi nipa Benin?,
-what_are_tourist_places_in_benin,Quel sont les lieux touristique au benin ?,What are the tourist places in Benin?,Kini awọn aaye aririn ajo ni Benin?,
-trip_to_benin,Un voyage au benin,A trip to benin,irin ajo lọ si Benin,
-Afe_AI,"Afe AI, une IA générative au service du tourisme au Bénin","Afe AI, a generative AI serving tourism in Benin","Afe AI, ipilẹṣẹ AI ti nṣe iranṣẹ irin-ajo ni Benin",
-banner_text,"Embarquez pour une expérience touristique immersive au Bénin avec l'IA comme conteur. Consultez les articles ci-dessous, déjà conçus pour vous.","Embark on an immersive tourism experience in Benin with AI as your storyteller. Visit the articles below, already crafted for you.","Wọle si iriri irin-ajo immersive kan ni Benin pẹlu AI bi onisọ itan rẹ. Ṣabẹwo awọn nkan ti o wa ni isalẹ, ti a ṣe tẹlẹ fun ọ.",
-how_can_i_help_with_tourism_benin,Comment puis-je vous aider avec le tourisme au Bénin?,How can I help you with tourism in Benin?,Bawo ni MO ṣe le ran ọ lọwọ pẹlu irin-ajo ni Benin?,
+tab_generate_image,Générer image,Generate Image,Ṣe ina aworan,Ṣe ina aworan
+where_to_visit_in_benin,Quel lieu  visiter au bénin?,Where to visit in Benin?,Nibo ni lati ṣabẹwo si Benin?,Nibo ni lati ṣabẹwo si Benin?
+can_you_tell_talk_about_benin,Peux tu me parler du Bénin?,Can you tell me about Benin?,Ṣe o le sọ fun mi nipa Benin?,Ṣe o le sọ fun mi nipa Benin?
+what_are_tourist_places_in_benin,Quel sont les lieux touristique au benin?,What are the tourist places in Benin?,Kini awọn aaye aririn ajo ni Benin?,Kini awọn aaye aririn ajo ni Benin?
+trip_to_benin,Un voyage au benin,A trip to benin,irin ajo lọ si Benin,irin ajo lọ si Benin
+Afe_AI,"Afe AI, une IA générative au service du tourisme au Bénin","Afe AI, a generative AI serving tourism in Benin","Afe AI, ipilẹṣẹ AI ti nṣe iranṣẹ irin-ajo ni Benin","Afe AI, ipilẹṣẹ AI ti nṣe iranṣẹ irin-ajo ni Benin"
+banner_text,"Embarquez pour une expérience touristique immersive au Bénin avec l'IA comme conteur. Consultez les articles ci-dessous, déjà conçus pour vous.","Embark on an immersive tourism experience in Benin with AI as your storyteller. Visit the articles below, already crafted for you.","Wọle si iriri irin-ajo immersive kan ni Benin pẹlu AI bi onisọ itan rẹ. Ṣabẹwo awọn nkan ti o wa ni isalẹ, ti a ṣe tẹlẹ fun ọ.","Wọle si iriri irin-ajo immersive kan ni Benin pẹlu AI bi onisọ itan rẹ. Ṣabẹwo awọn nkan ti o wa ni isalẹ, ti a ṣe tẹlẹ fun ọ."
+how_can_i_help_with_tourism_benin,Comment puis-je vous aider avec le tourisme au Bénin?,How can I help you with tourism in Benin,Bawo ni MO ṣe le ran ọ lọwọ pẹlu irin-ajo ni Benin,Bawo ni MO ṣe le ran ọ lọwọ pẹlu irin-ajo ni Benin
+a_moment_please,"Un petit moment, s'il vous plaît",A moment please,Jọwọ fun iṣẹju kan,Jọwọ fun iṣẹju kan
+can_you_please_reformualate_request,Pouvez-vous s'il vous plaît reformuler la demande?,can you please reformualate request?,Jọwọ ṣe o le ṣe atunṣe ibeere naa?,Jọwọ ṣe o le ṣe atunṣe ibeere naa?
+page_user_generate_images,Dévoilez votre créativité en utilisant AF AI pour générer des visuels liés au tourisme et à la culture au Bénin,Unveil your creativity by using AF AI to Generate Visuals related to tourism and culture in Benin,Ṣe afihan iṣẹda rẹ nipa lilo AF AI lati Ṣe agbekalẹ Awọn wiwo ti o ni ibatan si irin-ajo ati aṣa ni Benin,Ṣe afihan iṣẹda rẹ nipa lilo AF AI lati Ṣe agbekalẹ Awọn wiwo ti o ni ibatan si irin-ajo ati aṣa ni Benin
+page_user_generate_sample_images,Images générées à l'aide d'AFE AI - Propulsées par DALL-E 3,Images generated using AFE AI - Powered by DALL-E 3,Awọn aworan ti ipilẹṣẹ nipa lilo AFE AI - Agbara nipasẹ DALL-E 3,Awọn aworan ti ipilẹṣẹ nipa lilo AFE AI - Agbara nipasẹ DALL-E 4
+page_user_generate_creative_images,Générez vos images créatives ci-dessous,Generate your creative images below,Ṣẹda awọn aworan ẹda rẹ ni isalẹ,Ṣẹda awọn aworan ẹda rẹ ni isalẹ
