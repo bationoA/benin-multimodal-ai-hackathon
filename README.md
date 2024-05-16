@@ -49,7 +49,7 @@ The system is designed so that some articles related to coming events, culture o
 ## Some Outputs
 ![Example - Output 1](https://github.com/bationoA/benin-multimodal-ai-hackathon/blob/main/assets/images/output-1.png)
 
-Another result in Yoruba language:
+A result in Yoruba language:
 ![Example - Output 3](https://github.com/bationoA/benin-multimodal-ai-hackathon/blob/main/assets/images/output-2.png)
 ## License
 This project is licensed under the [Creative Commons Attribution-NonCommercial (CC BY-NC) License](https://github.com/bationoA/Team-Unfold-APHRC-DSE-inspire-hackathon-2024/blob/new_feature_engineering/LICENCE/LICENCE.md).
